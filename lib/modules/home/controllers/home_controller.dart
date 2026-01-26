@@ -1,10 +1,11 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/constants/app_constants.dart';
-import '../../../data/models/wallpaper_model.dart';
-import '../../../data/repositories/wallpaper_repository.dart';
-import '../../../data/providers/download_service.dart';
+import 'package:wallpaper_downloader/core/constants/app_constants.dart';
+import 'package:wallpaper_downloader/data/models/wallpaper_model.dart';
+import 'package:wallpaper_downloader/data/providers/download_service.dart';
+import 'package:wallpaper_downloader/data/repositories/wallpaper_repository.dart';
 
 /// Home controller with clean business logic
 class HomeController extends GetxController {
@@ -14,8 +15,8 @@ class HomeController extends GetxController {
   HomeController({
     WallpaperRepository? repository,
     DownloadService? downloadService,
-  })  : _repository = repository ?? WallpaperRepository(),
-        _downloadService = downloadService ?? DownloadService();
+  }) : _repository = repository ?? WallpaperRepository(),
+       _downloadService = downloadService ?? DownloadService();
 
   // Observable state
   final wallpapers = <WallpaperModel>[].obs;
@@ -78,8 +79,8 @@ class HomeController extends GetxController {
       final response = await _repository.getWallpapers(
         query: searchQuery.value.isEmpty
             ? selectedCategory.value.isEmpty
-                ? AppConstants.defaultSearchQuery
-                : selectedCategory.value
+                  ? AppConstants.defaultSearchQuery
+                  : selectedCategory.value
             : searchQuery.value,
         page: currentPage,
       );
@@ -110,8 +111,8 @@ class HomeController extends GetxController {
       final response = await _repository.getWallpapers(
         query: searchQuery.value.isEmpty
             ? selectedCategory.value.isEmpty
-                ? AppConstants.defaultSearchQuery
-                : selectedCategory.value
+                  ? AppConstants.defaultSearchQuery
+                  : selectedCategory.value
             : searchQuery.value,
         page: currentPage,
       );
@@ -178,7 +179,7 @@ class HomeController extends GetxController {
 
     try {
       downloadingIds[wallpaper.id] = 0.0;
-      
+
       final success = await _downloadService.downloadImage(
         imageUrl: wallpaper.src,
         imageId: wallpaper.id,

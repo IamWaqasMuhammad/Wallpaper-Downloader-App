@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:get/get.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../../../core/utils/responsive_util.dart';
-import '../../../shared/widgets/custom_loading.dart';
-import '../controllers/detail_controller.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wallpaper_downloader/core/theme/app_colors.dart';
+import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
+import 'package:wallpaper_downloader/core/utils/responsive_util.dart';
 
 /// Enhanced animated download button with progress and responsive design
 class DownloadButton extends StatelessWidget {
@@ -27,13 +23,13 @@ class DownloadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      width: isDownloading ? 60.w : 200.w,
-      height: 60.h,
-      child: isDownloading
-          ? _buildProgressIndicator()
-          : _buildDownloadButton(),
-    )
+          duration: const Duration(milliseconds: 300),
+          width: isDownloading ? 60.w : 200.w,
+          height: 60.h,
+          child: isDownloading
+              ? _buildProgressIndicator()
+              : _buildDownloadButton(),
+        )
         .animate(target: downloadSuccess ? 1 : 0)
         .scale(duration: 300.ms, curve: Curves.easeInOut);
   }
@@ -80,41 +76,38 @@ class DownloadButton extends StatelessWidget {
 
   Widget _buildDownloadButton() {
     return ElevatedButton(
-      onPressed: downloadSuccess ? null : onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: downloadSuccess
-            ? AppColors.success
-            : AppColors.primary,
-        foregroundColor: AppColors.textPrimary,
-        elevation: 8,
-        shadowColor: downloadSuccess
-            ? AppColors.success.withOpacity(0.5)
-            : AppColors.primary.withOpacity(0.5),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(ResponsiveUtil.radius(30)),
-        ),
-        padding: EdgeInsets.symmetric(
-          horizontal: 32.w,
-          vertical: 16.h,
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            downloadSuccess
-                ? Icons.check_circle_rounded
-                : Icons.download_rounded,
-            size: 24.w,
+          onPressed: downloadSuccess ? null : onPressed,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: downloadSuccess
+                ? AppColors.success
+                : AppColors.primary,
+            foregroundColor: AppColors.textPrimary,
+            elevation: 8,
+            shadowColor: downloadSuccess
+                ? AppColors.success.withOpacity(0.5)
+                : AppColors.primary.withOpacity(0.5),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(ResponsiveUtil.radius(30)),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
           ),
-          SizedBox(width: 12.w),
-          Text(
-            downloadSuccess ? 'Downloaded' : 'Download',
-            style: AppTextStyles.button,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                downloadSuccess
+                    ? Icons.check_circle_rounded
+                    : Icons.download_rounded,
+                size: 24.w,
+              ),
+              SizedBox(width: 12.w),
+              Text(
+                downloadSuccess ? 'Downloaded' : 'Download',
+                style: AppTextStyles.button,
+              ),
+            ],
           ),
-        ],
-      ),
-    )
+        )
         .animate()
         .shimmer(duration: 2000.ms, delay: 500.ms)
         .then()

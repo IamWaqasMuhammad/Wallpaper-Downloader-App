@@ -6,15 +6,12 @@ import 'package:lottie/lottie.dart';
 class CustomLoading extends StatelessWidget {
   final double? size;
 
-  const CustomLoading({
-    super.key,
-    this.size,
-  });
+  const CustomLoading({super.key, this.size});
 
   @override
   Widget build(BuildContext context) {
     final loadingSize = size ?? 150.w;
-    
+
     return Center(
       child: SizedBox(
         width: loadingSize,
@@ -25,7 +22,9 @@ class CustomLoading extends StatelessWidget {
           errorBuilder: (context, error, stackTrace) {
             return Center(
               child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  Theme.of(context).primaryColor,
+                ),
               ),
             );
           },

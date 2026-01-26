@@ -1,16 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'core/services/theme_service.dart';
-import 'core/theme/app_theme.dart';
-import 'routes/app_pages.dart';
-import 'routes/app_routes.dart';
-import 'core/bindings/initial_binding.dart';
+import 'package:wallpaper_downloader/app_barrels.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize Theme Service
   final themeService = Get.put(ThemeService());
 
@@ -39,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeService = Get.find<ThemeService>();
-    
+
     return ScreenUtilInit(
       designSize: const Size(375, 812), // iPhone 11 Pro design size
       minTextAdapt: true,

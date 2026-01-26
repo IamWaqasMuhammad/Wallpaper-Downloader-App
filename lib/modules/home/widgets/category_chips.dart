@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_constants.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
+import 'package:wallpaper_downloader/core/constants/app_constants.dart';
+import 'package:wallpaper_downloader/core/theme/app_colors.dart';
+import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
 
 /// Category chips for quick filtering
 class CategoryChips extends StatelessWidget {
@@ -39,9 +39,7 @@ class CategoryChips extends StatelessWidget {
                     vertical: 10,
                   ),
                   decoration: BoxDecoration(
-                    gradient: isSelected
-                        ? AppColors.primaryGradient
-                        : null,
+                    gradient: isSelected ? AppColors.primaryGradient : null,
                     color: isSelected ? null : AppColors.surface,
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(

@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/detail/bindings/detail_binding.dart';
-import '../modules/detail/views/detail_view.dart';
-import 'app_routes.dart';
+import 'package:wallpaper_downloader/modules/detail/bindings/detail_binding.dart';
+import 'package:wallpaper_downloader/modules/detail/views/detail_view.dart';
+import 'package:wallpaper_downloader/modules/home/bindings/home_binding.dart';
+import 'package:wallpaper_downloader/modules/home/views/home_view.dart';
+import 'package:wallpaper_downloader/routes/app_routes.dart';
 
 /// GetX page configuration with bindings
 class AppPages {

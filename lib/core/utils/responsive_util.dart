@@ -6,16 +6,16 @@ class ResponsiveUtil {
   // Spacing
   static double spacing(double value) => value.w;
   static double verticalSpacing(double value) => value.h;
-  
+
   // Font sizes
   static double fontSize(double value) => value.sp;
-  
+
   // Radius
   static double radius(double value) => value.r;
-  
+
   // Icon sizes
   static double iconSize(double value) => value.w;
-  
+
   // Padding
   static EdgeInsets padding({
     double? all,
@@ -36,23 +36,23 @@ class ResponsiveUtil {
       bottom: (bottom ?? vertical ?? 0).h,
     );
   }
-  
+
   // Screen dimensions
   static double get screenWidth => 1.sw;
   static double get screenHeight => 1.sh;
-  
+
   // Responsive breakpoints
   static bool get isMobile => screenWidth < 600;
   static bool get isTablet => screenWidth >= 600 && screenWidth < 900;
   static bool get isDesktop => screenWidth >= 900;
-  
+
   // Grid columns based on screen size
   static int get gridColumns {
     if (isDesktop) return 4;
     if (isTablet) return 3;
     return 2;
   }
-  
+
   // Card aspect ratio based on screen size
   static double get cardAspectRatio {
     if (isDesktop) return 0.75;

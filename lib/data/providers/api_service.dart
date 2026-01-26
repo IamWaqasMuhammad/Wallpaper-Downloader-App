@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../../core/constants/app_constants.dart';
-import '../models/api_response.dart';
-import '../models/wallpaper_model.dart';
+import 'package:wallpaper_downloader/core/constants/app_constants.dart';
+import 'package:wallpaper_downloader/data/models/api_response.dart';
+import 'package:wallpaper_downloader/data/models/wallpaper_model.dart';
 
 /// API service with improved error handling and retry logic
 class ApiService {
@@ -16,7 +16,9 @@ class ApiService {
     required int page,
   }) async {
     try {
-      final String searchQuery = query.isEmpty ? AppConstants.defaultSearchQuery : query;
+      final String searchQuery = query.isEmpty
+          ? AppConstants.defaultSearchQuery
+          : query;
       final Uri uri = Uri.parse('${AppConstants.baseUrl}/search').replace(
         queryParameters: {
           'query': searchQuery,
@@ -25,22 +27,18 @@ class ApiService {
         },
       );
 
-      final response = await _client.get(
-        uri,
-        headers: {
-          'Authorization': AppConstants.apiKey,
-        },
-      ).timeout(AppConstants.connectionTimeout);
+      final response = await _client
+          .get(uri, headers: {'Authorization': AppConstants.apiKey})
+          .timeout(AppConstants.connectionTimeout);
 
       if (response.statusCode == 200) {
         final Map<String, dynamic> body = json.decode(response.body);
         final List data = body['photos'] ?? [];
-        final wallpapers = data.map((json) => WallpaperModel.fromJson(json)).toList();
+        final wallpapers = data
+            .map((json) => WallpaperModel.fromJson(json))
+            .toList();
 
-        return ApiResponse.success(
-          wallpapers,
-          statusCode: response.statusCode,
-        );
+        return ApiResponse.success(wallpapers, statusCode: response.statusCode);
       } else {
         return ApiResponse.failure(
           _handleHttpError(response.statusCode),

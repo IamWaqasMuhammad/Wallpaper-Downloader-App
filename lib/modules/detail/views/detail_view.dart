@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/app_text_styles.dart';
-import '../../../core/utils/responsive_util.dart';
-import '../../../shared/widgets/custom_loading.dart';
-import '../controllers/detail_controller.dart';
-import '../widgets/download_button.dart';
+import 'package:wallpaper_downloader/core/theme/app_colors.dart';
+import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
+import 'package:wallpaper_downloader/core/utils/responsive_util.dart';
+import 'package:wallpaper_downloader/modules/detail/controllers/detail_controller.dart';
+import 'package:wallpaper_downloader/modules/detail/widgets/download_button.dart';
+import 'package:wallpaper_downloader/shared/widgets/custom_loading.dart';
 
 /// Beautiful detail view with enhanced UI and responsiveness
 class DetailView extends GetView<DetailController> {
@@ -60,7 +60,7 @@ class DetailView extends GetView<DetailController> {
               ),
             ),
           ),
-          
+
           // Bottom Info Panel
           Positioned(
             bottom: 0,
@@ -123,9 +123,9 @@ class DetailView extends GetView<DetailController> {
                       ),
                     ],
                   ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
-                  
+
                   SizedBox(height: 24.h),
-                  
+
                   // Image Info
                   Row(
                     children: [
@@ -140,18 +140,23 @@ class DetailView extends GetView<DetailController> {
                       ),
                     ],
                   ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2, end: 0),
-                  
+
                   SizedBox(height: 32.h),
-                  
+
                   // Download Button
                   Center(
-                    child: Obx(() => DownloadButton(
-                      isDownloading: controller.isDownloading.value,
-                      downloadSuccess: controller.downloadSuccess.value,
-                      progress: controller.downloadProgress.value,
-                      onPressed: controller.downloadWallpaper,
-                    )),
-                  ).animate().fadeIn(delay: 600.ms).scale(curve: Curves.elasticOut),
+                        child: Obx(
+                          () => DownloadButton(
+                            isDownloading: controller.isDownloading.value,
+                            downloadSuccess: controller.downloadSuccess.value,
+                            progress: controller.downloadProgress.value,
+                            onPressed: controller.downloadWallpaper,
+                          ),
+                        ),
+                      )
+                      .animate()
+                      .fadeIn(delay: 600.ms)
+                      .scale(curve: Curves.elasticOut),
                 ],
               ),
             ),
@@ -167,25 +172,16 @@ class DetailView extends GetView<DetailController> {
       decoration: BoxDecoration(
         color: Colors.white10,
         borderRadius: BorderRadius.circular(ResponsiveUtil.radius(20)),
-        border: Border.all(
-          color: Colors.white24,
-          width: 1,
-        ),
+        border: Border.all(color: Colors.white24, width: 1),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
-            size: 18.w,
-            color: AppColors.primaryLight,
-          ),
+          Icon(icon, size: 18.w, color: AppColors.primaryLight),
           SizedBox(width: 8.w),
           Text(
             label,
-            style: AppTextStyles.labelMedium.copyWith(
-              color: Colors.white,
-            ),
+            style: AppTextStyles.labelMedium.copyWith(color: Colors.white),
           ),
         ],
       ),

@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_text_styles.dart';
+import 'package:wallpaper_downloader/core/theme/app_colors.dart';
+import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
 
 /// Enhanced error state widget with Lottie animation
 class ErrorView extends StatelessWidget {
   final String message;
   final VoidCallback? onRetry;
 
-  const ErrorView({
-    super.key,
-    required this.message,
-    this.onRetry,
-  });
+  const ErrorView({super.key, required this.message, this.onRetry});
 
   @override
   Widget build(BuildContext context) {
@@ -40,38 +36,41 @@ class ErrorView extends StatelessWidget {
                 },
               ),
             ),
-            
+
             SizedBox(height: 24.h),
-            
+
             Text(
               'Oops!',
               style: AppTextStyles.headlineLarge,
             ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.3, end: 0),
-            
+
             SizedBox(height: 12.h),
-            
+
             Text(
-              message,
-              style: AppTextStyles.bodyMedium.copyWith(
-                color: AppColors.textSecondary,
-              ),
-              textAlign: TextAlign.center,
-            ).animate().fadeIn(duration: 300.ms, delay: 100.ms).slideY(begin: 0.3, end: 0),
-            
+                  message,
+                  style: AppTextStyles.bodyMedium.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+                .animate()
+                .fadeIn(duration: 300.ms, delay: 100.ms)
+                .slideY(begin: 0.3, end: 0),
+
             if (onRetry != null) ...[
               SizedBox(height: 24.h),
               ElevatedButton.icon(
-                onPressed: onRetry,
-                icon: const Icon(Icons.refresh_rounded),
-                label: const Text('Try Again'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 32.w,
-                    vertical: 16.h,
-                  ),
-                ),
-              )
+                    onPressed: onRetry,
+                    icon: const Icon(Icons.refresh_rounded),
+                    label: const Text('Try Again'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 32.w,
+                        vertical: 16.h,
+                      ),
+                    ),
+                  )
                   .animate()
                   .fadeIn(duration: 300.ms, delay: 200.ms)
                   .slideY(begin: 0.3, end: 0)

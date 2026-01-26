@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_text_styles.dart';
+import 'package:wallpaper_downloader/core/theme/app_colors.dart';
+import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
 
 /// Enhanced empty state widget with Lottie animation
 class EmptyState extends StatelessWidget {
   final String title;
   final String message;
 
-  const EmptyState({
-    super.key,
-    required this.title,
-    required this.message,
-  });
+  const EmptyState({super.key, required this.title, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -40,23 +36,26 @@ class EmptyState extends StatelessWidget {
                 },
               ),
             ),
-            
+
             SizedBox(height: 24.h),
-            
+
             Text(
               title,
               style: AppTextStyles.headlineLarge,
             ).animate().fadeIn(duration: 300.ms).slideY(begin: 0.3, end: 0),
-            
+
             SizedBox(height: 12.h),
-            
+
             Text(
-              message,
-              style: AppTextStyles.bodyMedium.copyWith(
-                color: AppColors.textSecondary,
-              ),
-              textAlign: TextAlign.center,
-            ).animate().fadeIn(duration: 300.ms, delay: 100.ms).slideY(begin: 0.3, end: 0),
+                  message,
+                  style: AppTextStyles.bodyMedium.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+                .animate()
+                .fadeIn(duration: 300.ms, delay: 100.ms)
+                .slideY(begin: 0.3, end: 0),
           ],
         ),
       ),

@@ -42,10 +42,7 @@ class WallpaperModel {
       'url': url,
       'photographer': photographer,
       'photographer_url': photographerUrl,
-      'src': {
-        'large2x': src,
-        'medium': srcMedium,
-      },
+      'src': {'large2x': src, 'medium': srcMedium},
       'width': width,
       'height': height,
       'avg_color': avgColor,

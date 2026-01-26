@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import '../../../data/repositories/wallpaper_repository.dart';
-import '../../../data/providers/download_service.dart';
-import '../controllers/home_controller.dart';
+import 'package:wallpaper_downloader/data/providers/download_service.dart';
+import 'package:wallpaper_downloader/data/repositories/wallpaper_repository.dart';
+import 'package:wallpaper_downloader/modules/home/controllers/home_controller.dart';
 
 /// Home binding for dependency injection
 class HomeBinding extends Bindings {

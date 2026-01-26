@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import '../../../data/models/wallpaper_model.dart';
-import '../../../data/providers/download_service.dart';
+import 'package:wallpaper_downloader/data/models/wallpaper_model.dart';
+import 'package:wallpaper_downloader/data/providers/download_service.dart';
 
 /// Detail controller for download management
 class DetailController extends GetxController {
   final DownloadService _downloadService;
-  
+
   DetailController({DownloadService? downloadService})
-      : _downloadService = downloadService ?? DownloadService();
+    : _downloadService = downloadService ?? DownloadService();
 
   // Observable state
   final isDownloading = false.obs;
@@ -40,14 +40,14 @@ class DetailController extends GetxController {
       if (success) {
         downloadSuccess.value = true;
         downloadProgress.value = 1.0;
-        
+
         Get.snackbar(
           'Success',
           'Wallpaper saved to gallery',
           snackPosition: SnackPosition.BOTTOM,
           duration: const Duration(seconds: 2),
         );
-        
+
         // Reset after delay
         await Future.delayed(const Duration(seconds: 2));
         downloadSuccess.value = false;

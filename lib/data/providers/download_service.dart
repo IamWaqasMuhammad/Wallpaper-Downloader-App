@@ -1,8 +1,9 @@
 import 'dart:io';
-import 'package:http/http.dart' as http;
+
+import 'package:file_saver/file_saver.dart';
 import 'package:flutter/foundation.dart';
 import 'package:gal/gal.dart';
-import 'package:file_saver/file_saver.dart';
+import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 /// Download service for handling wallpaper downloads across platforms
@@ -103,10 +104,7 @@ class DownloadService {
 
     final bytes = await _downloadWithProgress(imageUrl, onProgress);
 
-    await Gal.putImageBytes(
-      bytes,
-      name: 'wallpaper_$imageId',
-    );
+    await Gal.putImageBytes(bytes, name: 'wallpaper_$imageId');
 
     return true;
   }
