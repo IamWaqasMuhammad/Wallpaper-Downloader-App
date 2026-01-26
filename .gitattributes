@@ -1,0 +1,16 @@
+# Linguist manual overrides
+# These rules tell GitHub to ignore specific folders/files in language statistics
+# or to treat certain files as a specific language.
+
+# Ignore platform-specific boilerplate
+android/**/* linguist-vendored
+ios/**/* linguist-vendored
+linux/**/* linguist-vendored
+macos/**/* linguist-vendored
+windows/**/* linguist-vendored
+web/**/* linguist-vendored
+build/**/* linguist-vendored
+.dart_tool/**/* linguist-vendored
+
+# Ensure Dart is prioritized
+*.dart linguist-detectable=true
