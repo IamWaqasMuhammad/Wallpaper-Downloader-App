@@ -1,4 +1,4 @@
-# 🖼️ Wallpaper Downloader
+# 🖼️ Wallpaper Downloader App
 
 [![Flutter](https://img.shields.io/badge/Flutter-v3.10+-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
 [![GetX](https://img.shields.io/badge/GetX-v4.6+-651FFF?style=for-the-badge&logo=get.x&logoColor=white)](https://pub.dev/packages/get)
