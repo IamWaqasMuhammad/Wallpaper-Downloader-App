@@ -41,7 +41,7 @@ class DownloadButton extends StatelessWidget {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.3),
+            color: AppColors.primary.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -84,8 +84,8 @@ class DownloadButton extends StatelessWidget {
             foregroundColor: AppColors.textPrimary,
             elevation: 8,
             shadowColor: downloadSuccess
-                ? AppColors.success.withOpacity(0.5)
-                : AppColors.primary.withOpacity(0.5),
+                ? AppColors.success.withValues(alpha: 0.5)
+                : AppColors.primary.withValues(alpha: 0.5),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(ResponsiveUtil.radius(30)),
             ),

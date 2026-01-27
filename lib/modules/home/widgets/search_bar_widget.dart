@@ -25,8 +25,8 @@ class SearchBarWidget extends StatelessWidget {
             gradient: LinearGradient(
               colors: isDark
                   ? [
-                      AppColors.surface.withOpacity(0.8),
-                      AppColors.surfaceLight.withOpacity(0.6),
+                      AppColors.surface.withValues(alpha: 0.8),
+                      AppColors.surfaceLight.withValues(alpha: 0.6),
                     ]
                   : [Colors.white, AppColors.surfaceLightModeElevated],
               begin: Alignment.topLeft,
@@ -35,13 +35,13 @@ class SearchBarWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(ResponsiveUtil.radius(20)),
             border: Border.all(
               color: isDark
-                  ? AppColors.border.withOpacity(0.3)
-                  : AppColors.borderLight.withOpacity(0.5),
+                  ? AppColors.border.withValues(alpha: 0.3)
+                  : AppColors.borderLight.withValues(alpha: 0.5),
               width: 1,
             ),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primary.withOpacity(isDark ? 0.15 : 0.08),
+                color: AppColors.primary.withValues(alpha: isDark ? 0.15 : 0.08),
                 blurRadius: 20,
                 offset: const Offset(0, 4),
               ),

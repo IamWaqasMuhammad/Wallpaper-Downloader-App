@@ -4,7 +4,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize Theme Service
-  final themeService = Get.put(ThemeService());
+  Get.put(ThemeService());
 
   // Set system UI overlay style
   SystemChrome.setSystemUIOverlayStyle(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeService = Get.find<ThemeService>();
+    // themeService variable removed as it was unused
 
     return ScreenUtilInit(
       designSize: const Size(375, 812), // iPhone 11 Pro design size

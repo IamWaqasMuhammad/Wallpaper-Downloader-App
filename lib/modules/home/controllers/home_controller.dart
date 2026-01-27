@@ -193,7 +193,7 @@ class HomeController extends GetxController {
           'Success',
           'Wallpaper saved to your gallery!',
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.green.withOpacity(0.8),
+          backgroundColor: Colors.green.withValues(alpha: 0.8),
           colorText: Colors.white,
         );
       }
@@ -204,7 +204,7 @@ class HomeController extends GetxController {
             ? 'Please grant storage permission'
             : 'Could not save wallpaper',
         snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.red.withOpacity(0.8),
+        backgroundColor: Colors.red.withValues(alpha: 0.8),
         colorText: Colors.white,
       );
     } finally {

@@ -35,7 +35,7 @@ class WallpaperCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(ResponsiveUtil.radius(20)),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.15),
+                    color: AppColors.primary.withValues(alpha: 0.15),
                     blurRadius: 15,
                     offset: const Offset(0, 5),
                   ),
@@ -79,7 +79,7 @@ class WallpaperCard extends StatelessWidget {
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
                               colors: [
-                                Colors.black.withOpacity(0.8),
+                                Colors.black.withValues(alpha: 0.8),
                                 Colors.transparent,
                               ],
                             ),
@@ -144,11 +144,11 @@ class WallpaperCard extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   color: isDownloading
                                       ? Colors.black54
-                                      : AppColors.primary.withOpacity(0.9),
+                                      : AppColors.primary.withValues(alpha: 0.9),
                                   borderRadius: BorderRadius.circular(12.r),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.3),
+                                      color: Colors.black.withValues(alpha: 0.3),
                                       blurRadius: 8,
                                       offset: const Offset(0, 2),
                                     ),
