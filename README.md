@@ -49,8 +49,7 @@ This project follows the **GetX Pattern**, ensuring a clean separation of concer
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/IamWaqasMuhammad/Wallpaper-Downloader.git
-   cd Wallpaper-Downloader
+   git clone https://github.com/IamWaqasMuhammad/Wallpaper-Downloader-App.git
    ```
 
 2. **Install dependencies**:
