@@ -5,7 +5,6 @@ import 'package:lottie/lottie.dart';
 import 'package:wallpaper_downloader/core/theme/app_colors.dart';
 import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
 
-/// Enhanced error state widget with Lottie animation
 class ErrorView extends StatelessWidget {
   final String message;
   final VoidCallback? onRetry;

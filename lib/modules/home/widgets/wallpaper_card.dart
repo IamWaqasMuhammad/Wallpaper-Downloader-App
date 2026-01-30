@@ -11,7 +11,6 @@ import 'package:wallpaper_downloader/data/models/wallpaper_model.dart';
 import 'package:wallpaper_downloader/modules/home/controllers/home_controller.dart';
 import 'package:wallpaper_downloader/routes/app_routes.dart';
 
-/// Enhanced wallpaper card with smooth animations and responsive design
 class WallpaperCard extends StatelessWidget {
   final WallpaperModel wallpaper;
   final int index;

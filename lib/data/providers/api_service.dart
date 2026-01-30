@@ -10,7 +10,7 @@ class ApiService {
 
   ApiService({http.Client? client}) : _client = client ?? http.Client();
 
-  /// Fetch wallpapers with pagination
+  /// Fetch wallpapers
   Future<ApiResponse<List<WallpaperModel>>> fetchWallpapers({
     required String query,
     required int page,

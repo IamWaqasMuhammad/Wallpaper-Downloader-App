@@ -1,4 +1,5 @@
-/// Generic API response wrapper for better error handling
+
+
 class ApiResponse<T> {
   final T? data;
   final String? error;

@@ -3,10 +3,8 @@ import 'package:wallpaper_downloader/app_barrels.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Theme Service
   Get.put(ThemeService());
 
-  // Set system UI overlay style
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -16,7 +14,6 @@ void main() {
     ),
   );
 
-  // Set preferred orientations
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -30,10 +27,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // themeService variable removed as it was unused
-
     return ScreenUtilInit(
-      designSize: const Size(375, 812), // iPhone 11 Pro design size
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {

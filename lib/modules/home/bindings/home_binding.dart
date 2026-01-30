@@ -3,7 +3,6 @@ import 'package:wallpaper_downloader/data/providers/download_service.dart';
 import 'package:wallpaper_downloader/data/repositories/wallpaper_repository.dart';
 import 'package:wallpaper_downloader/modules/home/controllers/home_controller.dart';
 
-/// Home binding for dependency injection
 class HomeBinding extends Bindings {
   @override
   void dependencies() {

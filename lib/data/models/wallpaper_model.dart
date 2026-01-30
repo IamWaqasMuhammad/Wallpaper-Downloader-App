@@ -1,4 +1,5 @@
-/// Wallpaper model with enhanced fields
+
+
 class WallpaperModel {
   final int id;
   final String url;

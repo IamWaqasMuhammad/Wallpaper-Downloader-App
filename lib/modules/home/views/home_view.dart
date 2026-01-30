@@ -13,7 +13,6 @@ import 'package:wallpaper_downloader/shared/widgets/custom_loading.dart';
 import 'package:wallpaper_downloader/shared/widgets/empty_state.dart';
 import 'package:wallpaper_downloader/shared/widgets/error_view.dart';
 
-/// Beautiful home view with modern design and responsiveness
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 

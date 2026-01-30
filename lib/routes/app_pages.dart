@@ -5,7 +5,6 @@ import 'package:wallpaper_downloader/modules/home/bindings/home_binding.dart';
 import 'package:wallpaper_downloader/modules/home/views/home_view.dart';
 import 'package:wallpaper_downloader/routes/app_routes.dart';
 
-/// GetX page configuration with bindings
 class AppPages {
   static final pages = [
     GetPage(

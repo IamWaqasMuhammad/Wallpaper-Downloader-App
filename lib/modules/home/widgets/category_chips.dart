@@ -3,7 +3,6 @@ import 'package:wallpaper_downloader/core/constants/app_constants.dart';
 import 'package:wallpaper_downloader/core/theme/app_colors.dart';
 import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
 
-/// Category chips for quick filtering
 class CategoryChips extends StatelessWidget {
   final String selectedCategory;
   final Function(String) onCategorySelected;

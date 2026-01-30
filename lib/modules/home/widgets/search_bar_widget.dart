@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wallpaper_downloader/core/theme/app_colors.dart';
 import 'package:wallpaper_downloader/core/utils/responsive_util.dart';
 
-/// Enhanced animated search bar widget with responsive design
 class SearchBarWidget extends StatelessWidget {
   final TextEditingController controller;
   final Function(String) onChanged;

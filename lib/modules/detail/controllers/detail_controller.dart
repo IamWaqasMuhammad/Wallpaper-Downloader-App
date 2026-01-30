@@ -2,14 +2,12 @@ import 'package:get/get.dart';
 import 'package:wallpaper_downloader/data/models/wallpaper_model.dart';
 import 'package:wallpaper_downloader/data/providers/download_service.dart';
 
-/// Detail controller for download management
 class DetailController extends GetxController {
   final DownloadService _downloadService;
 
   DetailController({DownloadService? downloadService})
     : _downloadService = downloadService ?? DownloadService();
 
-  // Observable state
   final isDownloading = false.obs;
   final downloadProgress = 0.0.obs;
   final downloadSuccess = false.obs;
@@ -22,7 +20,6 @@ class DetailController extends GetxController {
     wallpaper = Get.arguments as WallpaperModel;
   }
 
-  /// Download wallpaper with progress tracking
   Future<void> downloadWallpaper() async {
     try {
       isDownloading.value = true;
@@ -46,6 +43,7 @@ class DetailController extends GetxController {
           'Wallpaper saved to gallery',
           snackPosition: SnackPosition.BOTTOM,
           duration: const Duration(seconds: 2),
+
         );
 
         // Reset after delay

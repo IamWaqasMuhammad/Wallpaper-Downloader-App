@@ -7,7 +7,6 @@ import 'package:wallpaper_downloader/data/models/wallpaper_model.dart';
 import 'package:wallpaper_downloader/data/providers/download_service.dart';
 import 'package:wallpaper_downloader/data/repositories/wallpaper_repository.dart';
 
-/// Home controller with clean business logic
 class HomeController extends GetxController {
   final WallpaperRepository _repository;
   final DownloadService _downloadService;

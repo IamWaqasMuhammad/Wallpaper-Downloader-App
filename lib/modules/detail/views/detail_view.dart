@@ -10,7 +10,6 @@ import 'package:wallpaper_downloader/modules/detail/controllers/detail_controlle
 import 'package:wallpaper_downloader/modules/detail/widgets/download_button.dart';
 import 'package:wallpaper_downloader/shared/widgets/custom_loading.dart';
 
-/// Beautiful detail view with enhanced UI and responsiveness
 class DetailView extends GetView<DetailController> {
   const DetailView({super.key});
 

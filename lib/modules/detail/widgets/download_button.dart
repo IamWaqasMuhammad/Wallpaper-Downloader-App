@@ -5,7 +5,6 @@ import 'package:wallpaper_downloader/core/theme/app_colors.dart';
 import 'package:wallpaper_downloader/core/theme/app_text_styles.dart';
 import 'package:wallpaper_downloader/core/utils/responsive_util.dart';
 
-/// Enhanced animated download button with progress and responsive design
 class DownloadButton extends StatelessWidget {
   final bool isDownloading;
   final bool downloadSuccess;
